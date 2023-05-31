@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const { Schema } = mongoose;
 
@@ -11,4 +11,4 @@ const schema = new Schema({
   prefered_cryptocurrency: String,
 });
 
-export const Profile = mongoose.model("Profile", schema);
+export const Profile = mongoose.model('Profile', schema);

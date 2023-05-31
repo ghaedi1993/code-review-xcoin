@@ -1,4 +1,4 @@
-import dotenv from "dotenv";
+import dotenv from 'dotenv';
 
 dotenv.config();
 
@@ -12,6 +12,6 @@ const checkEnv = (envVar: string, defaultValue?: string) => {
     return process.env[envVar] as string;
   }
 };
-export const PORT: number = parseInt(checkEnv("PORT"), 10);
-export const DBURL: string = checkEnv("DBURL");
-export const CORS_ORIGINS = ["http://localhost:3000"];
+export const PORT: number = parseInt(checkEnv('PORT'), 10);
+export const DBURL: string = checkEnv('DBURL');
+export const CORS_ORIGINS = ['http://localhost:3000'];
