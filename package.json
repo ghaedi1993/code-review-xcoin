@@ -25,6 +25,7 @@
   },
   "scripts": {
     "lint": "eslint \"{src,test}/**/*.ts\" --fix",
+    "prepare": "husky install",
     "dev": "ts-node-dev src/api.ts",
     "seed": "ts-node-dev src/scripts/seed.ts",
     "start": "node dist/api.js",
@@ -37,6 +38,12 @@
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.23.2",
+    "husky": "^8.0.3",
     "prettier": "^2.8.8"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
