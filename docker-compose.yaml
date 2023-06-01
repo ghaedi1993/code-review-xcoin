@@ -1,0 +1,27 @@
+version: "3"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+      - PORT=${PORT}
+      - DOCKER_CONTAINER=true     
+    ports:
+      - ${PORT}:${PORT}
+    depends_on:
+      - mongodb
+    volumes:
+      - app_data:/app/data
+  mongodb:
+    image: mongo:latest
+    command: mongod --noauth
+    restart: always
+    volumes:
+      - mongo_data:/data/db
+    logging:
+      driver: none    # Disable logging for the MongoDB service
+
+volumes:
+  mongo_data:
+  app_data:  
