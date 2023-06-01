@@ -12,7 +12,7 @@ services:
     depends_on:
       - mongodb
     volumes:
-      - app_data:/app/data
+      - app_data:/app
   mongodb:
     image: mongo:latest
     command: mongod --noauth
