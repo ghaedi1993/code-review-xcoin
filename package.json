@@ -36,17 +36,22 @@
     "dev": "ts-node-dev src/index.ts",
     "seed": "ts-node-dev src/scripts/seed.ts",
     "start": "node dist/index.js",
-    "build": "tsc -b"
+    "build": "tsc -b",
+    "test": "mocha --bail -r ts-node/register tests/*.spec.ts"
   },
   "devDependencies": {
+    "@types/mocha": "^10.0.1",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
+    "chai": "^4.3.7",
     "eslint": "^7.25.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.23.2",
     "husky": "^8.0.3",
-    "prettier": "^2.8.8"
+    "mocha": "^10.2.0",
+    "prettier": "^2.8.8",
+    "supertest": "^6.3.3"
   },
   "husky": {
     "hooks": {

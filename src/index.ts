@@ -1,4 +1,4 @@
-import app from './api';
+import app from './app';
 import { PORT } from './config';
 import logger from './utils/logger';
 import mongoFactory from './db';
