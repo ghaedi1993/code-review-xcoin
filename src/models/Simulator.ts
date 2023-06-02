@@ -1,8 +1,9 @@
 import mongoose from 'mongoose';
+import { ISimulator } from '../interfaces';
 
 const { Schema } = mongoose;
 
-const schema = new Schema(
+const schema = new Schema<ISimulator>(
   {
     profile_id: Schema.Types.ObjectId,
     dateRecorded: Date,
@@ -13,7 +14,7 @@ const schema = new Schema(
   },
   {
     timestamps: true,
-  },
+  }
 );
 
-export const Simulator = mongoose.model('Simulator', schema);
+export const Simulator = mongoose.model<ISimulator>('Simulator', schema);

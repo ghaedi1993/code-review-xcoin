@@ -1,10 +1,11 @@
 import mongoose from 'mongoose';
+import { IFavorite } from '../interfaces';
 
 const { Schema } = mongoose;
 
-const schema = new Schema(
+const schema = new Schema<IFavorite>(
   {
-    profile_id: String,
+    profile_id: mongoose.Schema.Types.ObjectId,
     name: String,
     favorite1: String,
     favorite2: String,
@@ -12,7 +13,7 @@ const schema = new Schema(
   },
   {
     timestamps: true,
-  },
+  }
 );
 
-export const Favorite = mongoose.model('Favorite', schema);
+export const Favorite = mongoose.model<IFavorite>('Favorite', schema);
