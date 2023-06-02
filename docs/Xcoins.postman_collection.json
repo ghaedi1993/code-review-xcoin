@@ -1,0 +1,199 @@
+{
+  "info": {
+    "_postman_id": "f50bac3d-c15b-4f95-abc0-883f6422c862",
+    "name": "Xcoins",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "favorite",
+      "item": [
+        {
+          "name": "get favorites",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/favorites",
+              "host": ["{{BASE_URL}}"],
+              "path": ["favorites"]
+            },
+            "description": "Get all favorites from api"
+          },
+          "response": []
+        },
+        {
+          "name": "get favorites by profileId",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/favorites/6093abb3dfd9da1deeae56f2",
+              "host": ["{{BASE_URL}}"],
+              "path": ["favorites", "6093abb3dfd9da1deeae56f2"]
+            },
+            "description": "get favorites comming from a profile id"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "profile",
+      "item": [
+        {
+          "name": "create Profile",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "email",
+                  "value": "javad",
+                  "type": "text"
+                },
+                {
+                  "key": "name",
+                  "value": "javad",
+                  "type": "text"
+                },
+                {
+                  "key": "nickname",
+                  "value": "J",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/profiles",
+              "host": ["{{BASE_URL}}"],
+              "path": ["profiles"]
+            },
+            "description": "creates a profile"
+          },
+          "response": []
+        },
+        {
+          "name": "get profiles",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/profiles",
+              "host": ["{{BASE_URL}}"],
+              "path": ["profiles"]
+            },
+            "description": "get all profiles"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "simulator",
+      "item": [
+        {
+          "name": "get simulators",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/simulators",
+              "host": ["{{BASE_URL}}"],
+              "path": ["simulators"]
+            },
+            "description": "get all simulators"
+          },
+          "response": []
+        },
+        {
+          "name": "get simulators by profileId",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/simulators/6093abb3dfd9da1deeae56f2",
+              "host": ["{{BASE_URL}}"],
+              "path": ["simulators", "6093abb3dfd9da1deeae56f2"]
+            },
+            "description": "get simulators comming from a profile id"
+          },
+          "response": []
+        },
+        {
+          "name": "create simulator for a profileId",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "dateRecorded",
+                  "value": "at Dec 04 2021 20:23:23 GMT+0330 (Iran Standard Time)",
+                  "type": "text"
+                },
+                {
+                  "key": "cryptocurrency",
+                  "value": "String",
+                  "type": "text"
+                },
+                {
+                  "key": "divisa",
+                  "value": "String",
+                  "type": "text"
+                },
+                {
+                  "key": "euros",
+                  "value": "200",
+                  "type": "text"
+                },
+                {
+                  "key": "price",
+                  "value": "3000",
+                  "type": "text"
+                },
+                {
+                  "key": "quantity",
+                  "value": "20",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/simulators/6093abb3dfd9da1deeae56f2",
+              "host": ["{{BASE_URL}}"],
+              "path": ["simulators", "6093abb3dfd9da1deeae56f2"]
+            },
+            "description": "create a simulator for a certain profile id"
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "BASE_URL",
+      "value": "http://localhost:8080/api"
+    }
+  ]
+}
