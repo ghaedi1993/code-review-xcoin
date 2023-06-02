@@ -13,7 +13,7 @@ const schema = new Schema<IFavorite>(
   },
   {
     timestamps: true,
-  }
+  },
 );
 
 export const Favorite = mongoose.model<IFavorite>('Favorite', schema);

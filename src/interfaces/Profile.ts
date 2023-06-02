@@ -1,8 +1,8 @@
 export interface IProfile {
-  name: String;
-  nickname: String;
-  email: String;
-  capital: Number;
-  divisa: String;
-  prefered_cryptocurrency: String;
+  name: string;
+  nickname: string;
+  email: string;
+  capital: number;
+  divisa: string;
+  prefered_cryptocurrency: string;
 }

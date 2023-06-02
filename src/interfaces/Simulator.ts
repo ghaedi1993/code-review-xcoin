@@ -1,8 +1,8 @@
 export interface ISimulator {
-  profile_id: String;
+  profile_id: string;
   dateRecorded: Date;
-  cryptocurrency: String;
-  euros: Number;
-  price: Number;
-  quantity: Number;
+  cryptocurrency: string;
+  euros: number;
+  price: number;
+  quantity: number;
 }

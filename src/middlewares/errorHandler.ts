@@ -1,4 +1,4 @@
-import { logger,buildError } from '../utils';
+import { logger, buildError } from '../utils';
 
 export function errorHandler(err, req, res, next) {
   logger.error(JSON.stringify(err));

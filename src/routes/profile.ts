@@ -23,7 +23,9 @@ router.post('/', async (req, res, next) => {
     .lean()
     .then((profile) => {
       if (!profile) {
-        return Profile.create({ name, email, nickname }).then((profile) => res.status(201).json(profile));
+        return Profile.create({ name, email, nickname }).then((profile) =>
+          res.status(201).json(profile),
+        );
       } else {
         throw Boom.conflict('Profile already exists');
       }

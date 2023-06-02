@@ -14,5 +14,7 @@ morgan.token('url', (req, res) => {
 });
 
 export function requestLoggerBuilder() {
-  return morgan(':date :url :method :status :remote-addr :response-time ms', { stream });
+  return morgan(':date :url :method :status :remote-addr :response-time ms', {
+    stream,
+  });
 }

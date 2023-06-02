@@ -14,7 +14,7 @@ const schema = new Schema<ISimulator>(
   },
   {
     timestamps: true,
-  }
+  },
 );
 
 export const Simulator = mongoose.model<ISimulator>('Simulator', schema);

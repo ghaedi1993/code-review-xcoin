@@ -1,7 +1,7 @@
 export interface IFavorite {
-  profile_id: String;
-  name: String;
-  favorite1: String;
-  favorite2: String;
-  favorite3: String;
+  profile_id: string;
+  name: string;
+  favorite1: string;
+  favorite2: string;
+  favorite3: string;
 }
