@@ -1,27 +1,21 @@
 import express from 'express';
-import { PORT, DBURL, CORS_ORIGINS } from './config';
 import cors from 'cors';
-import bodyParser from 'body-parser';
-import mongoose from 'mongoose';
-import { router as favoriteRouter } from './routes/favorite.router';
-import { router as profileRouter } from './routes/profile.router';
-import { router as simulatorRouter } from './routes/simulator.router';
-mongoose
-  .connect(`${DBURL}`, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => {
-    console.log(`Connected to DB ${DBURL}`);
-  })
-  .catch(console.log)
-  ;
+import routes from './routes';
+import { apiLimiter, errorHandler, requestLoggerBuilder } from './middlewares';
+
+import { CORS_ORIGINS } from './config';
+// import helmet from 'helmet';
 
 const app = express();
+app.set('trust proxy', true);
+app.use(apiLimiter);
+app.use(requestLoggerBuilder());
 app.use(cors({ origin: CORS_ORIGINS }));
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-app.use(favoriteRouter);
-app.use(profileRouter);
-app.use(simulatorRouter);
+// app.use(helmet());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use('/api', routes);
 
-app.listen(PORT, () =>
-  console.log(`✅  Ready on port http://localhost:${PORT}`),
-);
+app.use(errorHandler);
+
+export default app;

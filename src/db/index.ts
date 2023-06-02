@@ -9,7 +9,7 @@ async function mongoFactory() {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    logger.info(`Connected to ${connection.connection.name}`);
+    logger.info(`Connected to ${db_url}`);
     return {
       getInstance: () => connection.connection,
     };
