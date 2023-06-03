@@ -1,7 +1,7 @@
 import { Profile } from '../models';
 import Boom from '@hapi/boom';
 
-class ProfileService {
+export class ProfileService {
   constructor(private model:typeof Profile) {
     this.model = model;
   }

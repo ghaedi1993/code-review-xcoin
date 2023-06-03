@@ -1,7 +1,7 @@
 import { Favorite } from '../models';
 import logger from '../utils/logger';
 
-class FavoriteService {
+export class FavoriteService {
   constructor(private model:typeof Favorite) {
     this.model = model;
   }

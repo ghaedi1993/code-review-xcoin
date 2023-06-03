@@ -1,7 +1,7 @@
 import { Simulator } from '../models';
 import logger from '../utils/logger';
 
-class SimulatorService {
+export class SimulatorService {
   constructor(private model:typeof Simulator) {
     this.model = model;
   }
