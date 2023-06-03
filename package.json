@@ -19,6 +19,7 @@
     "express-rate-limit": "^6.7.0",
     "helmet": "^4.6.0",
     "http-status-codes": "^2.2.0",
+    "joi": "^17.9.2",
     "lodash": "^4.17.21",
     "luxon": "^1.26.0",
     "moment": "^2.29.4",
