@@ -33,11 +33,12 @@
   "scripts": {
     "lint": "eslint \"{src,test}/**/*.ts\" --fix",
     "prepare": "husky install",
-    "dev": "ts-node-dev src/index.ts",
-    "seed": "ts-node-dev src/scripts/seed.ts",
+    "dev": "npm run infra && ts-node-dev src/index.ts",
+    "seed": "npm run infra && ts-node-dev src/scripts/seed.ts",
     "start": "node dist/src/index.js",
     "build": "tsc -b",
-    "test": "mocha --bail -r ts-node/register --exit tests/*.spec.ts"
+    "test": "npm run infra && mocha --bail -r ts-node/register --exit tests/*.spec.ts",
+    "infra": "/bin/bash infra.sh"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.1",
