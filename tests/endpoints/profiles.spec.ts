@@ -2,9 +2,9 @@ import 'mocha';
 import { expect } from 'chai';
 import mongoose from 'mongoose';
 import request from 'supertest';
-import app from '../src/app';
-import mongoFactory from '../src/db';
-import { Profile } from '../src/models';
+import app from '../../src/app';
+import mongoFactory from '../../src/db';
+import { Profile } from '../../src/models';
 
 describe('API profiles', () => {
   let connection: mongoose.Connection;

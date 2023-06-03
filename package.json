@@ -37,7 +37,8 @@
     "seed": "ts-node-dev src/scripts/seed.ts",
     "start": "node dist/src/index.js",
     "build": "tsc -b",
-    "test": "mocha --bail -r ts-node/register --exit tests/*.spec.ts",
+    "test:integration": "mocha --bail -r ts-node/register --exit tests/endpoints/*.spec.ts",
+    "test:unit": "mocha --bail -r ts-node/register --exit src/**/*.spec.ts",
     "infra": "/bin/bash infra.sh"
   },
   "devDependencies": {

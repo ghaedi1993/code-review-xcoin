@@ -1,9 +1,9 @@
 import 'mocha';
 import { expect } from 'chai';
 import request from 'supertest';
-import app from '../src/app';
-import mongoFactory from '../src/db';
-import { Profile, Simulator } from '../src/models';
+import app from '../../src/app';
+import mongoFactory from '../../src/db';
+import { Profile, Simulator } from '../../src/models';
 import mongoose from 'mongoose';
 
 describe('API Simulator', () => {
