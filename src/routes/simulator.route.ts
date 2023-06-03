@@ -25,13 +25,13 @@ router.get('/:profile_id', async (req, res, next) => {
 });
 
 router.post('/:profile_id', async (req, res, next) => {
-  const profileId = req.params.profile_id;
-
+  const profile_id = req.params.profile_id;
+  const simulatorDto = {
+    profile_id,
+    ...req.body
+  }
   try {
-    const simulator = await simulatorService.createSimulator(
-      profileId,
-      req.body,
-    );
+    const simulator = await simulatorService.createSimulator(simulatorDto);
     res.status(201).json(simulator);
   } catch (err) {
     next(err);

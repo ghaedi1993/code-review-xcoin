@@ -1,6 +1,10 @@
 import { Simulator } from '../models';
 import logger from '../utils/logger';
-
+export interface SimulatorDTO {
+  profile_id: number;
+  name: string;
+  [key: string]: unknown;
+}
 export class SimulatorService {
   constructor(private model: typeof Simulator) {
     this.model = model;
@@ -8,7 +12,6 @@ export class SimulatorService {
   async getSimulators() {
     try {
       const simulators = await this.model.find().lean();
-      logger.info(simulators);
       return simulators;
     } catch (err) {
       throw err;
@@ -22,21 +25,15 @@ export class SimulatorService {
 
     try {
       const simulators = await this.model.find(query).lean();
-      logger.info(simulators);
       return simulators;
     } catch (err) {
       throw err;
     }
   }
 
-  async createSimulator(profileId, data) {
-    const newData = {
-      ...data,
-      profile_id: profileId,
-    };
-
+  async createSimulator(simulatorDto: SimulatorDTO) {
     try {
-      const simulator = await this.model.create(newData);
+      const simulator = await this.model.create(simulatorDto);
       logger.info(simulator);
       return simulator;
     } catch (err) {
