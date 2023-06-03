@@ -2,9 +2,12 @@ import { Simulator } from '../models';
 import logger from '../utils/logger';
 
 class SimulatorService {
+  constructor(private model:typeof Simulator) {
+    this.model = model;
+  }
   async getSimulators() {
     try {
-      const simulators = await Simulator.find().lean();
+      const simulators = await this.model.find().lean();
       logger.info(simulators);
       return simulators;
     } catch (err) {
@@ -18,7 +21,7 @@ class SimulatorService {
     };
 
     try {
-      const simulators = await Simulator.find(query).lean();
+      const simulators = await this.model.find(query).lean();
       logger.info(simulators);
       return simulators;
     } catch (err) {
@@ -33,7 +36,7 @@ class SimulatorService {
     };
 
     try {
-      const simulator = await Simulator.create(newData);
+      const simulator = await this.model.create(newData);
       logger.info(simulator);
       return simulator;
     } catch (err) {
@@ -42,4 +45,4 @@ class SimulatorService {
   }
 }
 
-export default new SimulatorService();
+export default new SimulatorService(Simulator);
