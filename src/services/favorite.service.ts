@@ -2,13 +2,12 @@ import { Favorite } from '../models';
 import logger from '../utils/logger';
 
 export class FavoriteService {
-  constructor(private model:typeof Favorite) {
+  constructor(private model: typeof Favorite) {
     this.model = model;
   }
   async getFavorites() {
     try {
       const favorites = await this.model.find().lean();
-      logger.info(favorites);
       return favorites;
     } catch (err) {
       throw err;
@@ -22,7 +21,6 @@ export class FavoriteService {
 
     try {
       const favorites = await this.model.find(query).lean();
-      logger.info(favorites);
       return favorites;
     } catch (err) {
       throw err;

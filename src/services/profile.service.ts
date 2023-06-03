@@ -2,7 +2,7 @@ import { Profile } from '../models';
 import Boom from '@hapi/boom';
 
 export class ProfileService {
-  constructor(private model:typeof Profile) {
+  constructor(private model: typeof Profile) {
     this.model = model;
   }
   async getProfiles() {
@@ -18,9 +18,11 @@ export class ProfileService {
     const { email, name, nickname } = profileData;
 
     try {
-      const existingProfile = await this.model.findOne({
-        $or: [{ email }, { nickname }],
-      }).lean();
+      const existingProfile = await this.model
+        .findOne({
+          $or: [{ email }, { nickname }],
+        })
+        .lean();
 
       if (!existingProfile) {
         const profile = await this.model.create({ name, email, nickname });

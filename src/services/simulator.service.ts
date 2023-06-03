@@ -2,7 +2,7 @@ import { Simulator } from '../models';
 import logger from '../utils/logger';
 
 export class SimulatorService {
-  constructor(private model:typeof Simulator) {
+  constructor(private model: typeof Simulator) {
     this.model = model;
   }
   async getSimulators() {
