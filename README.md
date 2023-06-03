@@ -48,7 +48,11 @@ $ npm run dev
 
 ```bash
 # integration tests
-$ npm run test
+# make sure you use infra command to have mongoose up and running
+$ npm run test:integration
+
+# unit tests
+$ npm run test:unit
 ```
 
 ## Docker-Compose 
