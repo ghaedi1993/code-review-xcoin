@@ -1,6 +1,11 @@
 import { Profile } from '../models';
 import Boom from '@hapi/boom';
-
+import logger from '../utils/logger';
+export interface ProfileDTO {
+  name: string;
+  nickname?: string;
+  email: string;
+}
 export class ProfileService {
   constructor(private model: typeof Profile) {
     this.model = model;
@@ -14,7 +19,7 @@ export class ProfileService {
     }
   }
 
-  async createProfile(profileData) {
+  async createProfile(profileData: ProfileDTO) {
     const { email, name, nickname } = profileData;
 
     try {
@@ -26,6 +31,7 @@ export class ProfileService {
 
       if (!existingProfile) {
         const profile = await this.model.create({ name, email, nickname });
+        logger.info(profile);
         return profile;
       } else {
         throw Boom.conflict('Profile already exists');

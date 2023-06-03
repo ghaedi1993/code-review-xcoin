@@ -1,6 +1,5 @@
 import { expect } from 'chai';
 import { ProfileService } from './profile.service';
-import { Profile } from '../models';
 import sinon from 'sinon';
 describe('ProfileService', () => {
   let mockProfiles: any[];

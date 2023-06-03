@@ -1,5 +1,4 @@
 import { Favorite } from '../models';
-import logger from '../utils/logger';
 
 export class FavoriteService {
   constructor(private model: typeof Favorite) {
