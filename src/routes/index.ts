@@ -1,7 +1,7 @@
 import { Router } from 'express';
-import favoriteRouter from './favorite';
-import profileRouter from './profile';
-import simulatorRouter from './simulator';
+import favoriteRouter from './favorite.route';
+import profileRouter from './profile.route';
+import simulatorRouter from './simulator.route';
 
 const router = Router();
 
